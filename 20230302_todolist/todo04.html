@@ -6,19 +6,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href=
+    "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+            integrity=
+    "sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+            crossorigin="anonymous">
+    <title>Document</title>
+    <script src="app.js"></script>
      <style>
+      
+          
+         
         .btn_modi{
             display: none;
             /* opacity: 0; */
         }
-/* fhgfhf */
+
         .inpWrap {
-            background: skyblue;
+            background: 
+            
         }
         .listView {
-            background: pink;
+            background:
         }
-        .inpWrap, .listView{width: 300px;margin: 0 auto;}
+      
+        .inpWrap{width: 600px; margin-left: 400px;}
+        .listView{width: 400px;margin: 0 auto;}
         .listView ul li{display: flex;padding: 5px 0;}
         .listView ul li .list{display: flex;align-items: center;padding-left: 10px;}
         .listView ul li .icon{
@@ -34,25 +47,59 @@
         .item.done{
             background-color:rgb(71, 83, 88);
         }
+
+        .todohd{
+            width: 1000px;
+            margin: 0 auto;
+            margin-top: 5px;
+        }
+
+        .container{
+            width: 1000px;
+        }
+       .menu{
+        width: 300px;
+        text-align: center;
+        padding-right: 80px;
+       }
+       .Bigmenu{
+        width: 300px;
+        margin: 0 auto;
+        background-color: beige;
+       }
+     
+     
      </style>
-    <title>Document</title>
 </head>
 <body>
+        <header class="Bigmenu bg-warning text-white p-4">
+            <div class="container">
+                <div class="menu">
+                    <div >
+                        <font face="Comic sans MS"
+                            size="6" color="black">
+                            <strong class=>ToDo List</strong>
+                        </font>
+                    </div>
+                </div>
+            </div>
+        </header>
+
        <!-- <i class="fa-solid fa-square-check"></i> -->
     <!-- <i class="fas fa-hammer"></i> -->
     <!-- <i class="fas fa-trash-alt"></i> -->
 
-
-
-    <div class="inpWrap">
-        <input type="hidden" class="num">
-        <input type="text" class="inp">
-        <button class="btn_input">입력</button>
-        <button class="btn_modi">수정</button>
-    </div>
-    <div class="listView">
-        <ul></ul>
-        <button class="btnAllDel" onclick="listAllDell">전체삭제</button>        
+    <div class="todohd">
+        <div class="inpWrap">
+            <input type="hidden" class="num">
+            <input type="text" class="inp btn btn-dark">
+            <button class="btn_input">입력</button>
+            <button class="btn_modi">수정</button>
+        </div>
+        <div class="listView">
+            <ul></ul>
+            <button class="btnAllDel" onclick="listAllDell">전체삭제</button>
+        </div>
     </div>
     <script>
 

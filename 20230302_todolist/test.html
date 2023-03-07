@@ -1,103 +1,164 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-    <style>
-        *{margin: 0;padding: 0;box-sizing: border-box;}
-        li{list-style: none;}
-        a:link,a:visited{text-decoration: none; color: #ddd;}
-
-        .inpWrap,.listView{
-            width: 400px;
-            margin: 0 auto;
-        }
-
-        .inpWrap{
-            background-color: pink;
-        }
-        .btnAllDel{
-            display: none;
-        }
-        .listView ul li{
-            display: flex;
-            justify-content: space-between;
-        }
-
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href=
+    "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+            integrity=
+    "sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+            crossorigin="anonymous">
+    <title>To Do List</title>
+    
+    <script src="app.js"></script>
 </head>
 <body>
-    <div class="inpWrap">
-        <input type="text" class="inp">
-        <button class="btn1">입력</button>
-    </div>
-    <div class="listView">
-        <ul></ul>
-        <button class="btnAllDel" onclick="allDel()">전체삭제</button>
-    </div>
-    <script>
-        const inpElem=document.querySelector(".inp");
-        const btn1Elem=document.querySelector(".btn1");
-        const listElem=document.querySelector(".listView ul");
-        const btnAllElem=document.querySelector(".btnAllDel");
+    <body>
+        <header class="bg-success text-white p-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12">
+                        <font face="Comic sans MS"
+                            size="11" color="black">
+                            <strong>ToDo List</strong>
+                        </font>
 
-        let listData=[
-            "정용재1",
-            "정용재2",
-            "정용재3",
-            "정용재4",
-    
+                    </div>
+                </div>
+            </div>
+        </header>
+      
+        <!-- <div class="container mt-3">
+            <h2>Add Items</h2>
+      
+            <label id="lblsuccess" class="text-success"
+                    style="display: none;">
+            </label>
+              
+            <form id="addForm">
+                <div class="row">
+                    <div class="col-lg-7 col-md-7 col-sm-7">
+      
+                        <input type="text" onkeyup=
+                            "toggleButton(this, 'submit')"
+                            class="form-control" id="item">
+                    </div>
+      
+                    <div class="col-lg-5 col-md-5 col-sm-5">
+                    <input type="submit" class="btn btn-dark"
+                            id="submit" value="Submit" disabled>
+                    </div>
+                </div>
+            </form>
+      
+            <h3 class="mt-4">Tasks</h3>
+      
+            <form id="addForm">
+                <ul class="list-group" id="items"></ul>
+            </form>
+        </div> -->
 
-        ];
-
-        btn1Elem.addEventListener("click",function(){
-            if(inpElem.value==""){
-            alert("오늘의 할일을 적어주세요.")
-            inpElem.focus()
-        }else{
-            listData.push(inpElem.value)
-            inpElem.value="";
-            viewData();
-     }
-    });
-
-    function viewData(){
-        let viewList="";
-        // for(let i=0;i<listData.length;i++){
-        //     viewList = viewList + "<li>" + listData[i] + "<span onclick = 'itemDel(" + i + ")'>삭제</span></li>"
-        // }
-        listData.forEach(function(item,index){
-            // viewList = viewList + "<li>"+ "<span>"+ itme +"</span>"+  "<span onclick = 'itemDel(index)'>" + 삭제 + "</span>"  + "</li>" 
-            viewList = viewList + "<li><span>" + item + "</span><span onclick='itemDel(" + index + ")'>삭제</span></li>"
-            //viewList = viewList + "<li>" + item + "<span onclick = 'itemDel(" + index + ")'>삭제</span></li>"
-        })
-
-        listElem.innerHTML=viewList;
-        
-        if(listData.length>0){   
-            btnAllElem.style.display = "block";
-            //  listData값이 1이상일때 블록처리가 된다 
-        }else{
-            btnAllElem.style.display = "none";
-            //  listData값이 0일때 계속하여 값이 none처리 
-        }
-    };
-    
-    viewData();
-
-    function allDel(){
-        listData = [];
-        viewData();
-    };
-    // viewData();
-    function itemDel(index){
-        listData.splice(index,1);
-        viewData();
-    }
+        <script>
+            // app.js
+// window.onload = () => {
+//     const form1 = document.querySelector("#addForm");
   
-    </script>
+//     let items = document.getElementById("items");
+//     let submit = document.getElementById("submit");
+  
+//     let editItem = null;
+  
+//     form1.addEventListener("submit", addItem);
+//     items.addEventListener("click", removeItem);
+// };
+  
+// function addItem(e) {
+//     e.preventDefault();
+  
+//     if (submit.value != "Submit") {
+//         console.log("Hello");
+  
+//         editItem.target.parentNode.childNodes[0].data
+//             = document.getElementById("item").value;
+  
+//         submit.value = "Submit";
+//         document.getElementById("item").value = "";
+  
+//         document.getElementById("lblsuccess").innerHTML
+//             = "Text edited successfully";
+  
+//         document.getElementById("lblsuccess")
+//                         .style.display = "block";
+  
+//         setTimeout(function() {
+//             document.getElementById("lblsuccess")
+//                             .style.display = "none";
+//         }, 3000);
+  
+//         return false;
+//     }
+  
+//     let newItem = document.getElementById("item").value;
+//     if (newItem.trim() == "" || newItem.trim() == null)
+//         return false;
+//     else
+//         document.getElementById("item").value = "";
+  
+//     let li = document.createElement("li");
+//     li.className = "list-group-item";
+  
+//     let deleteButton = document.createElement("button");
+  
+//     deleteButton.className =
+//         "btn-danger btn btn-sm float-right delete";
+  
+//     deleteButton.appendChild(document.createTextNode("Delete"));
+  
+//     let editButton = document.createElement("button");
+  
+//     editButton.className =
+//             "btn-success btn btn-sm float-right edit";
+  
+//     editButton.appendChild(document.createTextNode("Edit"));
+  
+//     li.appendChild(document.createTextNode(newItem));
+//     li.appendChild(deleteButton);
+//     li.appendChild(editButton);
+  
+//     items.appendChild(li);
+// }
+  
+// function removeItem(e) {
+//     e.preventDefault();
+//     if (e.target.classList.contains("delete")) {
+//         if (confirm("Are you Sure?")) {
+//             let li = e.target.parentNode;
+//             items.removeChild(li);
+//             document.getElementById("lblsuccess").innerHTML
+//                 = "Text deleted successfully";
+  
+//             document.getElementById("lblsuccess")
+//                         .style.display = "block";
+  
+//             setTimeout(function() {
+//                 document.getElementById("lblsuccess")
+//                         .style.display = "none";
+//             }, 3000);
+//         }
+//     }
+//     if (e.target.classList.contains("edit")) {
+//         document.getElementById("item").value =
+//             e.target.parentNode.childNodes[0].data;
+//         submit.value = "EDIT";
+//         editItem = e;
+//     }
+// }
+  
+// function toggleButton(ref, btnID) {
+//     document.getElementById(btnID).disabled = false;
+// }
+//         </script>
+    </body>
 </body>
 </html>

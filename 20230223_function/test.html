@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+        <style>
+        *{margin: 0;padding: 0;box-sizing: border-box;}
+        .wrap{
+            width: 1000px;
+            height: 300px;
+            background-color: skyblue;
+            position: relative;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+        .box1{
+            width: 100px;
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            right: 0; top: 0;
+            background-color: blue;
+
+        }
+
+        .box2{
+            width: 500px;
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            left: -100%;bottom: 0;
+            background-color:purple;
+            transition: 0.5s;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="box1" onmouseover="boxover()" onmouseout="boxout()">마우스1</div>
+        <div class="box2">마우스2</div>
+    </div>
+
+    <script>
+        const box1Elem = document.getElementsByClassName("box1")[0]
+        const box2Elem = document.getElementsByClassName("box2")[0]
+
+       
+       
+        function boxover(){
+            box2Elem.style.background = "black"
+            box2Elem.style.left = "0px"
+        }
+        function boxout(){
+            box2Elem.style.background = "violet"
+            box2Elem.style.left = "-100%"
+        }
+
+
+
+    </script>
+</body>
+</html>

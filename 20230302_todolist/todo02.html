@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="reset.css" class="css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        *{margin: 0;padding: 0;box-sizing: border-box;}
+        li{list-style: none;}
+        a:link,a:visited{text-decoration: none;color: #ddd;}
+
+        .inpWrap,.listView{
+            width: 400px;
+            margin: 0 auto;
+        }
+        .inpWrap{background-color: pink;}
+        .listView{}
+        .btnAllDel{
+            display: none;
+        }
+        .listView ul li{
+            display: flex;
+            justify-content: space-between;
+        }
+    </style>
+</head>
+<body>
+    <div class="inpWrap">
+        <input type="text" class="inp">
+        <button class="btn1">입력</button>
+    </div>
+    <div class="listView">
+        <ul></ul>
+        <button class="btnAllDel" onclick="allDel()">전체삭제</button>
+    </div>
+    <script>
+        const inpElem=document.querySelector(".inp");
+        const btn1Elem=document.querySelector(".btn1");
+        const listElem=document.querySelector(".listView ul");
+        const btnAllElem=document.querySelector(".btnAllDel");
+
+        let listData = [
+            "자바스크립트1",
+            "자바스크립트2",
+            "자바스크립트3",
+            "자바스크립트4",
+        ];
+
+        // btn1Elem.addEventListener("click",btnEvent)
+        btn1Elem.addEventListener("click",function(){
+            // console.log(inpElem.value)
+            if(inpElem.value == ""){
+                alert("오늘의 할일을 입력하세요")
+                inpElem.focus()
+                // 계속 검색창에 포커스가 간다.
+            }else{
+                listData.push(inpElem.value)
+                // 데이터값을 안에 넣어준다
+                inpElem.value = ""
+                viewData();
+            }
+        })
+        
+        function viewData(){
+            let viewList = "";
+            // for(let i=0;i<listData.length;i++){
+            // viewList += "<li>" + listData[i] + "<span onclick='itemDel(" + i + ")'>삭제</span></li>"
+            // }
+
+            listData.forEach(function(item,index){
+                viewList += `<li><span>${item}</span><span onclick="itemDel(${index})">삭제</span></li>`
+            })
+
+            // forEach(function(item,index){})
+
+            listElem.innerHTML=viewList
+
+            if(listData.length>0){
+                btnAllElem.style.display = "block"
+            }
+            else{
+                btnAllElem.style.display = "none"
+            }
+        };
+        viewData();
+
+        function allDel(){
+            listData=[];
+            viewData();
+        }
+        function itemDel(index){
+            listData.splice(index,1);
+            viewData();
+        }
+    </script>
+</body>
+</html>

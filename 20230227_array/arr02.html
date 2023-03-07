@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="city1"></div>
+    <div class="city2"></div>
+    <div class="city3"></div>
+          <!-- >> class는 위에 써야함  -->
+    <script>
+        const cityText = document.getElementsByClassName("city1")[0];
+        // const cityText = document.querySelector("body.city1");
+        // const cityText = document.querySelectorAll(".city1")[0];
+        // const cityText2 = document.getElementsByClassName("city2")[0];
+        // const cityText3 = document.getElementsByClassName("city3")[0];
+        const city = [
+            "seoul",
+            "deagh",
+            "incheon",
+        ]
+        const citySize = city.length;
+
+        function printCity(){
+            let textSum="";
+            for(let i=0;i<citySize;i++){
+                textSum += city[i]+"<br>"
+            }
+            cityText.innerHTML = textSum
+        }
+        printCity();
+    </script>
+</body>
+</html>

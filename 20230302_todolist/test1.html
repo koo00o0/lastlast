@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../20230302_todolist/reset.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        .inpWrap, .listView{width: 300px;margin: 0 auto;}
+        .inpWrap{
+            background: skyblue;
+        }
+        .listView{background: green;}
+        .listView ul li{display: flex;padding: 5px 0;justify-content: space-between}
+        .listView ul li .list{display: flex;align-items: center; padding-left: 10px;}
+        .listView ul li .icon{
+            margin-left: auto;
+            background:blueviolet;
+            padding: 5px 10px;
+            border-radius: 8px;
+            display: flex;
+            gap: 10px;
+            font-size: 16px;
+        }
+    </style>
+
+</head>
+<body>
+<div class="inpWrap">
+    <input type="text" class="inp">
+    <button class="btn">입력</button>
+</div>
+<div class="listView">
+    <ul></ul>
+    <button class="btnAllDel" onclick="listAllDel">전체삭제</button>
+</div>
+<script>
+    const inpElem=document.querySelector(".inp")
+    const btnElem=document.querySelector(".btn")
+    const listElem=document.querySelector(".listView ul")
+
+    let listData=[
+        "정용재1",
+        "정용재2",
+        "정용재3",
+        "정용재4",
+    ];
+
+
+    btnElem.addEventListener("click",function(){
+        if(inpElem.value==""){
+            alert("오늘의 할일을 적어주세요.")
+            inpElem.focus()
+        }else{
+            listData.push(inpElem.value,inpElem.value)
+            inpElem.value=""
+            viewData()
+        }
+        console.log(listData)
+    })
+
+        function viewData(){
+            for(i=0;i<localStorage.length;i++){
+                listData.push(localStorage.key(i))
+            }
+            console.log(listData)
+
+            let viewList=""
+            listData.forEach(function(item,index){
+                viewList += `<li>
+                    <div class="list">${item}</div>
+                        <div class='icon'>
+                        <a href="#" onclick="itemDel('${item}')"<i class="fas fa-trash-alt"></i></a>
+                        <a href="#"><i class="fas fa-hammer"></i></a>
+                        <a href="#"><i class="fa-solid fa-square-check"></i></a>
+                        </div>
+                    </li>`
+            })
+            listElem.innerHTML=viewList
+
+        }
+        viewData();
+
+        function itemDel(item){
+            console.log(item);
+            localStorage.removeItem(item);
+            viewData();
+        }
+
+
+
+        function listAllDel(){
+            listData=[];
+            viewData();
+        }
+
+</script>
+ 
+
+
+</body>
+</html>

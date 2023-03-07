@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const car = {
+            name:"sonata",
+            color:"bule",
+            window:4,
+            speed:100,
+            start:function(){
+                console.log(this.speed)
+            },
+            stop:function(){
+                console.log('stop')
+            },
+        }
+        car.start()
+        console.log(car.name)
+
+
+        // const acar =["sonata",4,"blue"]
+        // console.log(acar[1])
+
+
+
+    </script>
+</body>
+</html>

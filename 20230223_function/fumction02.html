@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0;padding: 0;box-sizing: border-box;}
+        .btn{
+            width: 100px;
+            height: 40px;
+            background-color: skyblue;
+            border-radius: 20%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .sky{
+            background: skyblue;
+        
+        }
+        .pink{
+            background: pink;
+        }
+        .btn:hover{
+            background-color: #333;
+            color: white
+        }
+
+        .box{
+            width: 200px;
+            height: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        print();
+        han();
+        
+        function print(){
+            console.log("print")
+        }
+
+        const han = function(){
+            console.log("han")
+        }
+        // $(document).ready(function(){})
+        // $(".han").click(function(){})
+        // document.getElementById("test").onclick = function(){
+
+        // }
+
+    function link(mylink){
+        location.href = "http://" + mylink;
+    }
+
+    function link1(mylink){
+        if(mylink == "네이버"){
+            location.href = "http://www.naver.com"
+        } else{
+            alert("경로가 없음")
+        }
+    }
+
+   function link2(myhome){
+    location.href = myhome
+   }
+
+ function link3(home){
+    location.href = "http://" + home +".com" }
+
+    </script>
+    <button onclick="print()">클릭</button>
+
+
+
+    
+    <div onclick="link('www.naver.com')" class="btn sky">클릭</div>
+    <div onclick="link('www.daum.net')" class="btn pink">클릭</div>
+
+    <div onclick="link2('http://www.nate.com')" class="home">네에트</div>
+    <div onclick="link3('naver')">네이버</div>
+
+    
+    
+    <div onclick="link1('네이버')" class="btn pink">네이버</div>
+    <div onclick="link1('다음')" class="btn pink">다음</div>
+
+    <div class="box"
+        onmouseover="boxover('black','white')"
+        onmouseout="boxout()">
+        마우스
+    
+    
+    </div>
+
+
+
+    <script>
+        
+        const boxElem = document.getElementsByClassName("box")[0]
+        
+        // boxElem.onmouseover = function(){
+        //     console.log("mouseover");
+        //     boxElem.style.background = "blue"
+        //     boxElem.style.color = "white"
+        // }
+        // boxElem.onmouseout = function(){
+        //     console.log("mouseout");
+        //     boxElem.style.background = "violet"
+        //     boxElem.style.color = "black"
+        // }
+
+
+        function boxover(color,fcolor){
+            let boxcolor = boxElem.style.background;
+            boxElem.style.background = color;
+            boxElem.style.color=fcolor;
+        }
+
+        function boxout(){
+            boxElem.style.background = "violet"
+            boxElem.style.color = "blue"
+        }
+
+    </script>
+
+
+</body>
+</html>

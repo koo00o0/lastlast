@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <div id="city">도시</div>
+    <script>
+        let arr=["서울","부산","인천"]
+        let alink=[
+            "http://www.naver.com",
+            "http://www.daum.net",
+            "http://www.nate.com",
+        ]
+
+        console.log(arr[0]);
+        console.log("배열개수"+arr.length);
+
+        let city="";
+        for(i=0;i<arr.length;i++){
+            city = city +"<a href='" + alink[i] + "'>"+ arr[i] + "</a><br>"
+           
+           
+            // city+= `<a href="${alink[i]}">${arr[i]}</a><br>`;
+           // 위에 내용과 같음 둘다 사용할줄 알아야함 ~
+        }
+
+
+
+
+        console.log(city)
+
+        document.getElementById("city").innerHTML=city
+
+
+
+
+
+
+    </script>
+
+    "<a href='"  +   변   +  "'>"+ 변 + "</a>"
+</body>
+</html>

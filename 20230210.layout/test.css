@@ -1,0 +1,33 @@
+@charset "utf-8";
+
+*{margin: 0;padding: 0;box-sizing:border-box;}
+clearfix:after{
+    content: "";display: block;clear: both;
+}
+a:link,a:visited{text-decoration: none;color: black;}
+li{list-style: none;}
+
+#hd{
+    width: 1000px;
+    margin: 40px auto;
+    background-color: pink; }
+
+h1.logo{
+    background-color: aqua;
+    text-align: center;
+    width: 100px;
+    margin: 0 auto;
+}
+.menu li{
+    float: left;
+    width: 20%;
+    background-color: beige;
+}
+.menu li a:hover{
+    background-color: violet;
+}
+.menu li{border: 2px solid #000;
+    text-align: center;
+    line-height: 50px;
+    margin-top: 20px;
+}

@@ -147,7 +147,7 @@
             
             viewData()
         })
-  
+            
 
 
         function viewData(){
@@ -168,11 +168,14 @@
                     }else{
                         viewList +=`<li class="item">${item.todo}`
                     }
+                    // ^ listData 항목 색깔변화 true일때 false일때 값 차이~
                     viewList +=`<div class="icon">
                                 <a href="javascript:void[0]" onclick="itemDel(${index})"><i class="fas fa-trash-alt"></i></a>
-                                <a href="javascript:void[0]" onclick="modi('${item.todo}',${index})"><i class="fas fa-hammer"></i></a>
+                                <a href="javascript:void[0]" onclick="modi('${listData[index].todo}',${index})"><i class="fas fa-hammer"></i></a>
                                 <a href="javascript:void[0]" onclick="done(${index})"><i class="fa-solid fa-square-check"></i></a>
                                     </div></li>`
+                                    //javascript:void[0] >> # 이라고 생각
+                                    //listData[index].todo 정해져있는값 설정하기위해 
                 // viewList +=">"
                 // viewList +=item.todo
                 // viewList +="</li>"

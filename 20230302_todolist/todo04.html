@@ -135,11 +135,11 @@
         })
             //수정
             btnMoElem.addEventListener("click",function(){
-            listData[numElem.value].todo = inpElem.value
+            listData[numElem.value].todo = inpElem.value;
             listData[numElem.value].done = false;
-            inpElem.value= ""
-            btnIpElem.style.display = "inline-block"
-            btnMoElem.style.display = "none"
+            inpElem.value= "";
+            btnIpElem.style.display = "inline-block";
+            btnMoElem.style.display = "none";
 
             // localStorage insert
             let valueData = JSON.stringify(listData)
@@ -163,15 +163,15 @@
                 console.log(item.todo)
                 
                     if(item.done==true){
-                        viewList +=`<li class="item done">${item.todo}`
-
+                        viewList +=`<li class="item done">${listData[index].todo}`
+                              //listData[index]>> listData안에 있는 함수 위치지정
                     }else{
                         viewList +=`<li class="item">${item.todo}`
                     }
                     // ^ listData 항목 색깔변화 true일때 false일때 값 차이~
                     viewList +=`<div class="icon">
                                 <a href="javascript:void[0]" onclick="itemDel(${index})"><i class="fas fa-trash-alt"></i></a>
-                                <a href="javascript:void[0]" onclick="modi('${listData[index].todo}',${index})"><i class="fas fa-hammer"></i></a>
+                                <a href="javascript:void[0]" onclick="modi('${item.todo}',${index})"><i class="fas fa-hammer"></i></a>
                                 <a href="javascript:void[0]" onclick="done(${index})"><i class="fa-solid fa-square-check"></i></a>
                                     </div></li>`
                                     //javascript:void[0] >> # 이라고 생각

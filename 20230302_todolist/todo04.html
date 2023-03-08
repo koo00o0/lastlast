@@ -123,7 +123,9 @@
 
                 // localStorage insert
                 let valueData = JSON.stringify(listData)
+                //listData를 문자형태로 만들어줌
                 localStorage.setItem("todoData",valueData)
+                //localstorage에 넣어줌
                 
                 viewData()
                 inpElem.value = ""
@@ -143,7 +145,7 @@
 
             // localStorage insert
             let valueData = JSON.stringify(listData)
-                localStorage.setItem("todoData",valueData)
+            localStorage.setItem("todoData",valueData)
             
             viewData()
         })
@@ -154,7 +156,9 @@
 
             if(localStorage.length>0){
                 let localData = localStorage.getItem("todoData");
+                                  //localStorage.getItem 이곳에 아이템을 꺼내줌
                 listData = JSON.parse(localData)
+                //문자형태를 풀어줌
             }
             
             let viewList="";

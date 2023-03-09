@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,18 +11,41 @@
             integrity=
     "sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
             crossorigin="anonymous">
-    <title>Document</title>
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
     <script src="app.js"></script>
-     <style>
+     <style>     
+    body {
+        color: blue;
+        }
+        
+        
         .btn_modi{
-            display: none;
+           display: none;  
+           border: 0;
+           outline: none;
+           width: 50px;
+           height: 50px;
+           border-radius: 100px;
+           font-size: 15px;
+           box-shadow: 3px 3px 3px rgb(144, 211, 99),
+            -3px -3px 3px rgb(55, 202, 68);
+           transition: 0.3s;
+           font-weight: bold;
+           background-color: rgb(52, 207, 117);
+           margin-left: 20px;
+           font-size: 20px;
+          
         }
+        .btn_modi:hover{
+            transform: scale(1.5);
+            transition: 0.8s;
+        }
+
         .inpWrap {
-            background: 
-            
-        }
-        .listView {
-            /* background: */
+            text-align: center;
+            margin-top: 10px;
         }
       
         .listView{width: 400px;margin-top: 20px; }
@@ -39,18 +62,9 @@
         }
         .listView ul li .icon a{color: white;}
         .item.done{
-            background-color:rgb(67, 85, 92);
-          
-        }
-
-        .todohd{
-            /* width:1000px; */
-            /* margin: 0 auto; */
-            /* margin-top: 5px; */
-        }
-
-        .container{
-            /* width: 1000px; */
+            font-weight:1000;
+            color:white;
+            font-family: 'Noto Sans KR', sans-serif;
         }
        .menu{
         width: 300px;
@@ -60,23 +74,56 @@
        .Bigmenu{
         width: 300px;
         margin: 0 auto;
-        background-color: beige;
-        
        }
 
     .btnAllDel{
-     margin-left: 51px;
-     width: 87px;
+    border: 0;
+    margin: 20px;
+    background-color: orange;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 10px;
+    font-family: 'Nanum Gothic', sans-serif;
+    font-family: 'Noto Sans KR', sans-serif;
     }
-
+    .btnAllDel:hover{
+        transform: scale(1.2);
+        box-shadow: -3px -3px 3px rgb(172, 172, 172),
+         3px 3px 3px rgb(237, 237, 237);
+        transition: 0.3s;
+        background: orange;
+    }
+    
     .back1{
        background-image: url(1111.jpg);
        background-size: cover;
+       background-repeat: no-repeat;
        background-position: center;
        width: 437px;
        margin: 0 auto;
        height: 650px;
        border-radius: 30px;
+    }
+
+    .btn_input{
+    border: 0;
+    outline: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 100px;
+    font-size: 15px;
+    box-shadow: 3px 3px 3px rgb(144, 211, 99), 
+    -3px -3px 3px rgb(55, 202, 68);
+    transition: 0.3s;
+    font-weight: bold;
+    background-color: rgb(52, 207, 117);
+    margin-left: 20px;
+    font-size: 20px;
+    }
+    .btn_input:hover{
+    box-shadow: -3px -3px 3px rgb(172, 172, 172),
+     3px 3px 3px rgb(237, 237, 237);
+    transition: 0.3s;
     }
      
      </style>
@@ -104,10 +151,10 @@
 
         <div class="todohd">
             <div class="inpWrap">
-                <input type="hidden" class="num">
+                <input type="hidden" class="num" >
                 <input type="text" class="inp btn btn-dark">
-                <button class="btn_input">입력</button>
-                <button class="btn_modi">수정</button>
+                <button class="btn_input"><i class="fa-regular fa-comment"></i></button>
+                <button class="btn_modi"><i class="fa-solid fa-hand-point-up"></i></button>
             </div>
             <div class="listView">
                 <ul></ul>
@@ -160,8 +207,6 @@
             viewData()
         })
   
-
-
         function viewData(){
 
             let localData = []

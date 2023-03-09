@@ -16,11 +16,10 @@
             <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
     <script src="app.js"></script>
      <style>     
-    body {
+    body{
         color: blue;
+        background-color: grey;
         }
-        
-        
         .btn_modi{
            display: none;  
            border: 0;
@@ -36,18 +35,15 @@
            background-color: rgb(52, 207, 117);
            margin-left: 20px;
            font-size: 20px;
-          
         }
         .btn_modi:hover{
             transform: scale(1.5);
             transition: 0.8s;
         }
-
         .inpWrap {
             text-align: center;
             margin-top: 10px;
-        }
-      
+        }    
         .listView{width: 400px;margin-top: 20px; }
         .listView ul li{display: flex;padding: 5px 0;}
         .listView ul li .list{display: flex;align-items: center;padding-left: 10px;}
@@ -129,8 +125,6 @@
      </style>
 </head>
 <body>
-        
-    
  <div class="back1">
         <header class="Bigmenu bg-warning text-white p-4">
             <div class="container">
@@ -144,11 +138,9 @@
                 </div>
             </div>
         </header>
-    
         <!-- <i class="fa-solid fa-square-check"></i> -->
         <!-- <i class="fas fa-hammer"></i> -->
         <!-- <i class="fas fa-trash-alt"></i> -->
-
         <div class="todohd">
             <div class="inpWrap">
                 <input type="hidden" class="num" >
@@ -239,15 +231,12 @@
                 // viewList +="</li>"
 
             })
-
             listElem.innerHTML=viewList;
             // for(let i=0;i<listData.length;i++){
             //     console.log(listData[i].todo)
             //  }
         }
-    
         viewData();
-
         function itemDel(index){
             listData.splice(index,1);
             btnIpElem.style.display = "inline-block";
@@ -266,9 +255,7 @@
             // } else{
             //     listData[index].done=true
             // }
-
             listData[index].done = !listData[index].done;
-
             // localStorage insert
             let valueData = JSON.stringify(listData)
                 localStorage.setItem("todoData",valueData)
@@ -284,10 +271,8 @@
             inpElem.style.backgroundColor = '#343a40'
             inpElem.style.color = 'white'
         }
-
         function listAllDell(){
-            listData=[];
-            
+            listData=[];    
             localStorage.setItem("todoData", [])
             viewData();
         }

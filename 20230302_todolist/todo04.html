@@ -277,6 +277,14 @@
             viewData();
         }
 
+        inpElem.addEventListener("keyup", function (event) {
+        if (event.keyCode === 13) {
+            event.preventDefault();
+            btnIpElem.click();
+            viewData();
+        }
+        });
+
     </script>
 </body>
 </html>

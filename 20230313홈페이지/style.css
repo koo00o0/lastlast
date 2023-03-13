@@ -1,0 +1,243 @@
+@charset "utf-8";
+
+
+*{margin: 0;padding: 0;box-sizing:border-box;}
+.clearfix:after{
+    content:"";display: block;clear: both;
+}
+li{list-style: none;}
+a:link,a:visited{text-decoration: none;color:black}
+
+html,body{
+    height: 100%;
+}
+
+
+.container{
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.hd{
+    background-color: rgb(156, 87, 206);
+   display: flex;
+   justify-content: space-between;
+}
+
+
+.logo{
+    width: 250px;
+    height: 100px;
+    margin-top: 40px ;
+    /* border: 1px solid black; */
+}
+
+.logo a{
+    /* font-weight: bold; */
+    font-size: 45px;
+    color: white;
+}
+
+.menu{
+    font-size: 21px;
+    display: flex;
+    margin-right: 5px;
+    margin-top: 80px;
+    /* border: 1px solid black; */
+    justify-content: space-around;
+}
+/* .menu li{
+    width: 300px;
+    border: 1px solid black;
+} */
+.menu li{
+    text-align: center;
+    /* border: 1px solid black; */
+    width: 200px;
+}
+
+.menu li a{
+    margin-right: 2px;
+    color: white;
+    font-weight: bold;
+}
+.menu li a:hover{
+    color: pink;
+}
+
+
+.img img{
+    width: 100%;
+    height: 450px;
+    clear: both;
+    overflow: hidden;
+}
+
+.tabMenu{
+    width: 600px;
+    height: 100%;
+}
+.tabMenu input[type="radio"]{
+    display: none;
+}
+
+.tabMenu label{
+    display: inline-block;
+    padding: 15px 25px;
+    font-weight:  600;
+    text-align: center;
+    color: #aaa;
+    border: 1px solid transparent;
+}
+.tabMenu label:hover{
+    color: #222;
+    cursor: pointer;
+}
+
+.tabMenu input:checked + label{
+    color: #b00;
+    border: 1px solid #ddd;
+    background-color: #eee;
+}
+
+.tabContent{
+    display: none;
+    padding: 20px 0 0;
+    border-top:1px solid #ddd ;
+    margin-top: 20px;
+}
+
+
+#notice ul{
+    list-style: disc;
+    margin-left: 30px;
+}
+
+#notice ul li{
+    font-size: 18px;
+    line-height: 2.5;
+    list-style: disc;
+}
+
+/* #gallery ul li{
+    display: inline;
+} */
+
+/* #notice{
+    display: none; */
+
+
+.tabMenu{
+
+    width: 600px;
+    height: 100%;
+    margin-top: 10px;
+}
+
+
+
+.links ul li{
+    text-align: center;
+    margin: 10px 0;
+    margin-right: 40px;
+    margin-top: 50px; 
+
+}
+.links li img{
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+}
+
+
+.links li p{
+    font-weight: 200;
+    font-size: 19px;
+    margin-top: 8px;
+}
+
+#gallery{
+    display: none;
+}
+
+.temp{
+    display: flex;
+    gap: 10px;
+}
+.temp:nth-child(1){
+    margin-bottom: 10px;
+}
+.temp li{
+    background-image: url(dream\ jeju.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100px;
+    width: 150px;
+}
+
+.btnWrap{
+    margin-bottom: 50px;
+}
+
+
+
+.flex{
+    display: flex;
+}
+
+.bigMenu{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* border: 3px solid black; */
+    width: 2000px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+
+    
+}
+
+.flex1{
+    background-color: #aaa;
+    height: 150px;
+
+}
+
+
+
+.flex2{
+    display: flex;
+    justify-content: space-between;
+    width: 2000px;
+    margin: 0 auto;
+    color: #eee;
+}
+.flex3{
+    display: flex;
+    margin-bottom: 10px;
+}
+.flex3 div{
+    padding: 5px 10px;
+    /* border: 1px solid black; */
+    position: relative;
+}
+.flex3 div:first-child{
+    padding-left: 0;
+}
+
+.flex3 div:after{
+    display: block;
+    content: "";
+    height: 10px;
+    width: 1px;
+    background-color: #eee;
+    position: absolute;
+    right: 0;
+    transform: translateY(-50%);
+    top: 50%;
+
+}
+
+.flex3 div:last-child:after{
+    width: 0;
+}

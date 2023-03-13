@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+</head>
+<body>
+    <header class="hd ">
+        <div class="logo container"><a href="#">Dream Jeju</a></div>
+        <nav class="menu1 container">
+            <ul class="menu">
+                <li><a href="#">단체 여행</a></li>
+                <li><a href="#">맞춤 여행</a></li>
+                <li><a href="#">갤러리</a></li>
+                <li><a href="#">문의하기</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="img">
+        <img src="Dream1.jpg" alt="">
+    </div>
+        <div class="bigMenu">
+            <div class="leftside">
+            <div class="content">
+                <div class="tabMenu">
+                    <div class="btnWrap">
+                    <input type="radio" id="tab1" name="tabs" checked>
+                    <label for="tab1" class="notice2">공지사항</label>
+                    <input type="radio" id="tab2" name="tabs">
+                    <label for="tab2" class="gallery2">갤러리</label>
+                    </div>
+                    <div class="tabcontent" id="notice">
+                        <h2>공지사항</h2>
+                        <ul>
+                            <li>사무실을 이전했습니다.</li>
+                            <li>사무실을 이전했습니다.</li>
+                            <li>[참가 모집]키약 체험에  초대합니다</li>
+                            <li>겨울,추천 여행지</li>
+                            <li>가을,추천 여행지</li>
+                        </ul>
+                    </div>
+                    <div class="tabcontent" id="gallery">
+                        <ul class="temp">
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                        </ul>
+                        <ul class="temp">
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            </div>
+            <div class="rightside">
+            <div class="links">
+                <ul class="flex">
+                    <li>
+                        <a href="#"><img src="dream jeju.jpg" alt=""></a>
+                        <p>평화 기행</p>
+                    </li>
+                    <li>
+                        <a href="#"><img src="dream jeju.jpg" alt=""></a>
+                        <p>힐링 워크샵</p>
+                    </li>
+                    <li>
+                        <a href="#"><img src="dream jeju.jpg" alt=""></a>
+                        <p>문의하기</p>
+                    </li>
+                </ul>
+            </div>
+            </div>
+        </div>
+        <div class="flex1">
+            <div class="flex2">
+                <div class="leftside2">
+                    <div class="flex3">
+                        <div>회사소개</div>
+                        <div>개인정보처리방침</div>
+                        <div>여행약관</div>
+                        <div>사이트맵</div>
+                    </div>
+                    <div>제주특별자치도 ~~~~ (대표전화) 123-456-7890</div>
+                </div>
+                <div class="rightside2">
+                    <div>logo</div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+          $(".notice2").click(function(){
+            $("#notice").css("display","block")
+            $("#gallery").css("display","none")
+          })
+         
+          $(".gallery2").click(function(){
+            $("#notice").css("display","none")
+            $("#gallery").css("display","block")
+          })
+         
+        </script>
+</body>
+</html>
